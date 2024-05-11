@@ -16,7 +16,7 @@ export default function Page(data: any) {
       //setTimeout(() => {
         var qcImgDiv = document.getElementById("qcImg");
 
-        if (qcImgDiv) {
+        if (qcImgDiv && 0) {
           var insElement = document.createElement("ins");
           insElement.className = "adsbygoogle";
           insElement.style.display = "block";
@@ -252,7 +252,7 @@ export default function Page(data: any) {
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-3619133031508264"
-            data-ad-slot="8607088416"
+            data-ad-slot="1055429660"
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
@@ -265,7 +265,7 @@ export default function Page(data: any) {
           <div id="player_dev"></div>
           {/* <script
             async
-            src="https://nexvelar.digital/dist/dev_player.js?site=9799333c-0cc6-43f7-a41f-6b96dc651b9e"
+            src="https://nexvelar.digital/dist/dev_player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305"
           ></script> */}
           <Suspense fallback={<p>Loading ...</p>}>
             <article
