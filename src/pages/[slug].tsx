@@ -191,7 +191,7 @@ export default function Page(data: any) {
 
   useEffect(() => {
     const scriptElement = document.createElement("script");
-    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=e2b58c2a-96fe-4654-a6f0-38103a45123a?v=${Math.floor(
+    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305?v=${Math.floor(
       Math.random() * 1000
     )}`;
     scriptElement.async = true;
