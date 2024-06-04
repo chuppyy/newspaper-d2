@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["apinewspaper.sportsandtravelonline.com","api.sportsandtravelonline.com"],
+    domains: ["apinewspaper.vbonews.com","api.vbonews.com"],
   },
   eslint: {
     ignoreDuringBuilds: true,
