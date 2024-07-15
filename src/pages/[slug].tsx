@@ -16,12 +16,12 @@ export default function Page(data: any) {
       //setTimeout(() => {
         var qcImgDiv = document.getElementById("qcImg");
 
-        if (qcImgDiv && 0) {
+        if (qcImgDiv ) {
           var insElement = document.createElement("ins");
           insElement.className = "adsbygoogle";
           insElement.style.display = "block";
-          insElement.setAttribute("data-ad-client", "ca-pub-3619133031508264");
-          insElement.setAttribute("data-ad-slot", "2041680062");
+          insElement.setAttribute("data-ad-client", "ca-pub-3052636440995168");
+          insElement.setAttribute("data-ad-slot", "6705645893");
           insElement.setAttribute("data-ad-format", "auto");
           insElement.setAttribute("data-full-width-responsive", "true");
 
@@ -245,14 +245,14 @@ export default function Page(data: any) {
         <div className="container-flu details">
           <script
             async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3619133031508264"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052636440995168"
             crossOrigin="anonymous"
           ></script>
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-3619133031508264"
-            data-ad-slot="1055429660"
+            data-ad-slot="1546718362"
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
