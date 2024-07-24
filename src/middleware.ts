@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server'
 
 export default async function middleware(req: NextRequest) {
   const country = req.geo?.country || ''
+  console.log("country", country)
   if (['VI'].includes(country)) {
     return NextResponse.redirect(new URL('/not-found', req.url))
   }
