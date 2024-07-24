@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
 export default async function middleware(req: NextRequest) {
-  const country = req.geo?.country || ''
+  const country = req.geo?.country || req.headers.get('x-vercel-ip-country') || ''
   console.log("country", country)
   if (['VI', 'VN', 'vi', 'vn'].includes(country)) {
     return NextResponse.redirect(new URL('/not-found', req.url))
