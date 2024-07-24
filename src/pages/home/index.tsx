@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export default function Home(props: any) {
   const { data } = props;
-  console.log(data);
   return (
     <div className="container">
       <div className="banner-container">
@@ -87,14 +86,14 @@ export default function Home(props: any) {
             <div className="news-list">
               {group.detail.map((item: any, idx: number) => (
                 <div className="news-item" key={idx}>
-                  <Image
+                  {/* <Image
                     src={item.avatarLink}
                     alt={item.name}
                     className="image-full"
                     width={300}
                     height={300}
                     priority
-                  />
+                  /> */}
                   <p className="new-title">{item.name}</p>
 
                   <Link className="read-more" href={`/${item.id}`}>
@@ -113,7 +112,7 @@ export default function Home(props: any) {
 export const getServerSideProps: GetServerSideProps<any> = async () => {
   try {
     const response = await axios.get(`${process.env.APP_API2}/News/news-list`);
-    console.log("response", response);
+    //console.log("response", response);
     return {
       props: { data: response.data.data },
     };
