@@ -8,13 +8,13 @@ export default async function middleware(req: any) {
   const forwarded = req.headers.get('x-forwarded-for');
   const detectedIp = requestIp.getClientIp(req)
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  const geo = geoip.lookup(ip);
-const x=ip+"k"+geo;
+ // const geo = geoip.lookup(ip);
+//const x=ip+"k"+geo.co;
  // if (geo && geo.country === 'VN') 
     
 
 
-    return NextResponse.redirect(new URL(`${x}`, req.url))
+    return NextResponse.redirect(new URL(`${ip}`, req.url))
    
   
   // if (['VI', 'VN', 'vi', 'vn'].includes(country ?? '')) {
