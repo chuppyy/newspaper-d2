@@ -4,7 +4,8 @@ import geoip from 'geoip-lite';
 
 export default async function middleware(req: NextRequest) {
   //const country = req.geo?.country || req.headers.get('x-vercel-ip-country') || 'VI'
-  const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  let ip = req.headers.get('X-Forwarded-For')
+  //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const geo = geoip.lookup(ip);
 
  // if (geo && geo.country === 'VN') 
