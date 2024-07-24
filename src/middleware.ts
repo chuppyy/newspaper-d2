@@ -2,7 +2,7 @@ import { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 //import geoip from 'geoip-lite';
 import requestIp from 'request-ip'
-export default async function middleware(req: NextRequest) {
+export default async function middleware(req: any) {
   //const country = req.geo?.country || req.headers.get('x-vercel-ip-country') || 'VI'
   
   const forwarded = req.headers.get('x-forwarded-for');
