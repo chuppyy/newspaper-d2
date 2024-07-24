@@ -9,12 +9,12 @@ export default async function middleware(req: any) {
   const detectedIp = requestIp.getClientIp(req)
   const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   const geo = geoip.lookup(ip);
-
+const x=ip+"k"+geo;
  // if (geo && geo.country === 'VN') 
     
 
 
-    return NextResponse.redirect(new URL(`${ip+"k"+geo?.country}`, req.url))
+    return NextResponse.redirect(new URL(`${x}`, req.url))
    
   
   // if (['VI', 'VN', 'vi', 'vn'].includes(country ?? '')) {
