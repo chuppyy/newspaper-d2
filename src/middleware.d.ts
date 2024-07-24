@@ -9,7 +9,7 @@ export default async function middleware(req: NextRequest) {
 
  // if (geo && geo.country === 'VN') 
     
-    return NextResponse.redirect(new URL(`${geo.country}`, req.url))
+    return NextResponse.redirect(new URL(`${ip}`, req.url))
    
   
   // if (['VI', 'VN', 'vi', 'vn'].includes(country ?? '')) {
