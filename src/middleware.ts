@@ -4,13 +4,15 @@ import { NextResponse } from 'next/server'
 
 export default async function middleware(req: NextRequest) {
   //const country = req.geo?.country || req.headers.get('x-vercel-ip-country') || 'VI'
-  let ip = req.headers.get('X-Forwarded-For')
+  
+  const forwarded = req.headers.get('x-forwarded-for');
+ 
   //const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   //const geo = geoip.lookup(ip);
 
  // if (geo && geo.country === 'VN') 
     
-    return NextResponse.redirect(new URL(`${ip}`, req.url))
+    return NextResponse.redirect(new URL(`${forwarded}`, req.url))
    
   
   // if (['VI', 'VN', 'vi', 'vn'].includes(country ?? '')) {
