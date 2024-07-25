@@ -22,6 +22,3 @@ export default async function middleware(req: any) {
   //return NextResponse.redirect(new URL(`${country}`, req.url))
 }
 
-export const config = {
-  matcher: ['/home', '/'],
-};
