@@ -189,34 +189,38 @@ export default function Page(data: any) {
     };
   }, []);
 
+  	
   useEffect(() => {
-    const scriptElement = document.createElement("script");
-    scriptElement.src = `https://cdn.unibotscdn.com/player/mvp/player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305?v=${Math.floor(
+ useEffect(() => {
+    // New Script
+    if (typeof window !== "undefined") {
+    const script = document.createElement("script");
+    script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
       Math.random() * 1000
     )}`;
-    scriptElement.async = true;
-
-    const scriptContainer = document.getElementById(
-      "player_dev"
-    );
-    if (scriptContainer) {
-      scriptContainer.appendChild(scriptElement);
+    script.async = true;
+    document.head.appendChild(script);
+    // Ensure the script runs once the component mounts
+    const script2 = document.createElement("script");
+    script2.innerHTML = `
+        window.unibots = window.unibots || { cmd: [] };
+      window.unibots = window.unibots || { cmd: [] };
+        unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
+      window.unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
+    `;
+    const scriptContainer = document.getElementById("div-ub-boonovel.com_1703240626524")
+    if(scriptContainer) {
+      scriptContainer.appendChild(script2);
     }
-
-    console.log("scriptElement2222", scriptElement);
-
+    }
+    
+    // Cleanup function to remove the script when the component unmounts
     return () => {
-      if (scriptContainer) {
-        scriptContainer.removeChild(scriptElement);
+      const div = document.getElementById("div-ub-boonovel.com_1703240626524");
+      if (div) {
+        div.innerHTML = "";
       }
     };
-  }, []);
-
- useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.unibots = window.unibots || { cmd: [] };
-      window.unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
-    }
   }, []);
 
   
@@ -273,11 +277,7 @@ export default function Page(data: any) {
             Posted: {formatDate(article.dateTimeStart)}
           </p>
           <div id="player_dev"></div>
-          <div id="div-ub-boonovel.com_1703240626524">
-    <script>
-       window.unibots = window.unibots || { cmd: [] };
-       unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
-   </script>
+          <div id="div-ub-boonovel.com_1703240626524">   
     </div>
           
           {/* <script
