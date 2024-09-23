@@ -211,6 +211,16 @@ export default function Page(data: any) {
       }
     };
   }, []);
+
+ useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.unibots = window.unibots || { cmd: [] };
+      window.unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
+    }
+  }, []);
+
+  
+  
   return (
     <>
       <Head>
@@ -268,7 +278,7 @@ export default function Page(data: any) {
        window.unibots = window.unibots || { cmd: [] };
        unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
    </script>
-</div>
+    </div>
           
           {/* <script
             async
