@@ -15,7 +15,6 @@ export default function Page(data: any) {
     try {
       //setTimeout(() => {
         var qcImgDiv = document.getElementById("qcImg");
-
         if (qcImgDiv ) {
           var insElement = document.createElement("ins");
           insElement.className = "adsbygoogle";
@@ -190,38 +189,33 @@ export default function Page(data: any) {
   }, []);
 
   	
-  useEffect(() => {
- useEffect(() => {
-    // New Script
-    if (typeof window !== "undefined") {
-    const script = document.createElement("script");
-    script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
-      Math.random() * 1000
-    )}`;
-    script.async = true;
-    document.head.appendChild(script);
-    // Ensure the script runs once the component mounts
-    const script2 = document.createElement("script");
-    script2.innerHTML = `
-        window.unibots = window.unibots || { cmd: [] };
+useEffect(() => {
+  // New Script
+  const script = document.createElement("script");
+  script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
+    Math.random() * 1000
+  )}`;
+  script.async = true;
+  document.head.appendChild(script);
+  // Ensure the script runs once the component mounts
+  const script2 = document.createElement("script");
+  script2.innerHTML = `
       window.unibots = window.unibots || { cmd: [] };
-        unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
-      window.unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
-    `;
-    const scriptContainer = document.getElementById("div-ub-boonovel.com_1703240626524")
-    if(scriptContainer) {
-      scriptContainer.appendChild(script2);
+      unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
+  `;
+  const scriptContainer = document.getElementById("div-ub-boonovel.com_1703240626524")
+  if(scriptContainer) {
+    scriptContainer.appendChild(script2);
+  }
+  
+  // Cleanup function to remove the script when the component unmounts
+  return () => {
+    const div = document.getElementById("div-ub-boonovel.com_1703240626524");
+    if (div) {
+      div.innerHTML = "";
     }
-    }
-    
-    // Cleanup function to remove the script when the component unmounts
-    return () => {
-      const div = document.getElementById("div-ub-boonovel.com_1703240626524");
-      if (div) {
-        div.innerHTML = "";
-      }
-    };
-  }, []);
+  };
+}, []);
 
   
   
