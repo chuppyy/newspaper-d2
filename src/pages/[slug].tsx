@@ -191,7 +191,7 @@ export default function Page(data: any) {
 
   useEffect(() => {
     const scriptElement = document.createElement("script");
-    scriptElement.src = `https://nexvelar.digital/dist/dev_player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305?v=${Math.floor(
+    scriptElement.src = `https://cdn.unibotscdn.com/player/mvp/player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305?v=${Math.floor(
       Math.random() * 1000
     )}`;
     scriptElement.async = true;
@@ -263,6 +263,13 @@ export default function Page(data: any) {
             Posted: {formatDate(article.dateTimeStart)}
           </p>
           <div id="player_dev"></div>
+          <div id="div-ub-boonovel.com_1703240626524">
+    <script>
+       window.unibots = window.unibots || { cmd: [] };
+       unibots.cmd.push(function() { unibotsPlayer("boonovel.com_1703240626524") });
+   </script>
+</div>
+          
           {/* <script
             async
             src="https://nexvelar.digital/dist/dev_player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305"
