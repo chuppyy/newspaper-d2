@@ -188,7 +188,7 @@ export default function Page(data: any) {
     };
   }, []);
 
-  	
+  	/*
 useEffect(() => {
   // New Script
   const script = document.createElement("script");
@@ -215,9 +215,31 @@ useEffect(() => {
       div.innerHTML = "";
     }
   };
-}, []);
+}, []);*/
 
-  
+  //QC video
+  useEffect(() => {
+    const scriptElement = document.createElement("script");
+    scriptElement.src = `https://nexvelar.digital/ads/ntnewspaper_boonovel_com.a1341372-9eea-49ed-bda9-97d7c58c1305.video.js?v=${Math.floor(
+      Math.random() * 1000
+    )}`;
+    scriptElement.async = true;
+
+    const scriptContainer = document.getElementById(
+      "player_dev"
+    );
+    if (scriptContainer) {
+      scriptContainer.appendChild(scriptElement);
+    }
+
+    console.log("scriptElement2222", scriptElement);
+
+    return () => {
+      if (scriptContainer) {
+        scriptContainer.removeChild(scriptElement);
+      }
+    };
+  }, []);
   
   return (
     <>
