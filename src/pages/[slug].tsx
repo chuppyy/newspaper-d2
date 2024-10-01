@@ -223,7 +223,7 @@ useEffect(() => {
     scriptElement.src = `https://videoadstech.org/ads/newspaper_livextop_com.66ce8f45-fc2b-4b11-80b6-e85a4dc55711.video.js?v=${Math.floor(
       Math.random() * 1000
     )}`;
-    script.defer = true;
+    scriptElement.defer = true;
     /*scriptElement.async = true;*/
 
     const scriptContainer = document.getElementById(
