@@ -224,7 +224,7 @@ useEffect(() => {
       Math.random() * 1000
     )}`;
     scriptElement.defer = true;
-    /*scriptElement.async = true;*/
+    scriptElement.async = true;
 
     const scriptContainer = document.getElementById(
       "player_dev"
