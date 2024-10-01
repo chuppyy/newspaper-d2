@@ -22,21 +22,21 @@ export default function Page(data: any) {
     googleTagId,
   } = data.parameters;
 
-  // QC video
-  useEffect(() => {
-    const scriptElement = document.createElement("script");
-    scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
-    scriptElement.async = true;
-    const scriptContainer = document.getElementById("player_dev");
-    if (scriptContainer) {
-      scriptContainer.appendChild(scriptElement);
-    }
-    return () => {
-      if (scriptContainer) {
-        scriptContainer.removeChild(scriptElement);
-      }
-    };
-  }, [videoScriptSrc]);
+  // // QC video
+  // useEffect(() => {
+  //   const scriptElement = document.createElement("script");
+  //   scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
+  //   scriptElement.async = true;
+  //   const scriptContainer = document.getElementById("player_dev");
+  //   if (scriptContainer) {
+  //     scriptContainer.appendChild(scriptElement);
+  //   }
+  //   return () => {
+  //     if (scriptContainer) {
+  //       scriptContainer.removeChild(scriptElement);
+  //     }
+  //   };
+  // }, [videoScriptSrc]);
 
 /*
 useEffect(() => {
@@ -141,7 +141,7 @@ useEffect(() => {
           gtag('config', '${googleTagId}');
         `}
       </Script>
-      //Code Auto
+     
       <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} />
 
       <main>
