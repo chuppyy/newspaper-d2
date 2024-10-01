@@ -220,7 +220,7 @@ useEffect(() => {
   //QC video
   useEffect(() => {
     const scriptElement = document.createElement("script");
-    scriptElement.src = `https://nexvelar.digital/ads/ntnewspaper_boonovel_com.a1341372-9eea-49ed-bda9-97d7c58c1305.video.js?v=${Math.floor(
+    scriptElement.src = `https://videoadstech.org/ads/newspaper_livextop_com.66ce8f45-fc2b-4b11-80b6-e85a4dc55711.video.js?v=${Math.floor(
       Math.random() * 1000
     )}`;
     scriptElement.async = true;
@@ -268,21 +268,19 @@ useEffect(() => {
         id="adsbygoogle-init"
         strategy="afterInteractive"
         crossOrigin="anonymous"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052636440995168"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2388584177550957"
       />
+    
+      
       <main>
       
         <div className="container-flu details">
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052636440995168"
-            crossOrigin="anonymous"
-          ></script>
+         
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
-            data-ad-client="ca-pub-3619133031508264"
-            data-ad-slot="1546718362"
+            data-ad-client="ca-pub-2388584177550957"
+            data-ad-slot="6488553234"
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
