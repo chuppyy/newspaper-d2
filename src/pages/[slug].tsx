@@ -90,6 +90,18 @@ useEffect(() => {
         qcDivqc3.appendChild(newDiv);
       }
 
+      var qcDivqc2 = document.getElementById("qcmgidgb2");
+      if (qcDivqc2) {
+       var insElement = document.createElement("ins");
+        insElement.className = "adsbygoogle";
+        insElement.style.display = "block";
+        insElement.setAttribute("data-ad-client", googleClientId);
+        insElement.setAttribute("data-ad-slot", googleAdSlot);
+        insElement.setAttribute("data-ad-format", "auto");
+        insElement.setAttribute("data-full-width-responsive", "true");
+        qcDivqc2.appendChild(insElement);
+      }
+
       var qcDiv = document.getElementById("qcmgidgb");
       if (qcDiv) {
         var newDiv = document.createElement('div');
@@ -199,7 +211,7 @@ export async function getStaticProps({ params }: { params: any }) {
       //GA tiêu đề
       googleClientSlotId:"6488553234",
       //GA sau video
-      googleAdSlot: "3894815574",
+      googleAdSlot: "5099751269",
 //Cái sau
       mgWidgetId1: "1677050",
       //Cái trước
