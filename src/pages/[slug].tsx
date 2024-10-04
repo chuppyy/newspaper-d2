@@ -7,7 +7,11 @@ const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
-
+declare global {
+  interface Window {
+    googletag: any;
+  }
+}
 export default function Page(data: any) {
   const article = data.data;
   const {
