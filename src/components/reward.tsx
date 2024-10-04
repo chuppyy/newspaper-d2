@@ -12,8 +12,7 @@ export default function RewardedAd() {
 
       // Xử lý sau khi script đã được tải xong
       script.onload = () => {
-        debugger
-        googletag = window.googletag || { cmd: [] };
+        const googletag = (window as any).googletag || { cmd: [] };
         googletag.cmd.push(() => {
           // Kiểm tra xem đã hiển thị rewarded ad cho người dùng này chưa
           const hasShownRewardedAd = localStorage.getItem("hasShownRewardedAd");
@@ -21,7 +20,7 @@ export default function RewardedAd() {
 
           if (
             !hasShownRewardedAd ||
-            currentTime - parseInt(hasShownRewardedAd, 10) > 10 * 60 * 1000
+            currentTime - parseInt(hasShownRewardedAd, 10) > 10  60  1000
           ) {
             // Nếu chưa hiển thị hoặc đã quá 10 phút, tiếp tục xử lý
             const rewardedSlot = googletag
@@ -36,7 +35,8 @@ export default function RewardedAd() {
 
             const showRewardedAd = () => {
               const trigger = document.getElementById("rewardModal");
-              trigger.style.display = "block";
+              if(trigger)
+                trigger.style.display = "block";
 
               googletag.pubads().addEventListener("impressionViewable", () => {
                 // Sự kiện khi impressions được hiển thị
@@ -45,28 +45,30 @@ export default function RewardedAd() {
 
               googletag
                 .pubads()
-                .addEventListener("slotRenderEnded", (event) => {
+                .addEventListener("slotRenderEnded", (event: any) => {
                   // Sự kiện khi quảng cáo kết thúc hiển thị
                   if (event.isEmpty) {
                     console.log("Ad is empty or failed to load");
                     // Ẩn modal nếu quảng cáo không thành công
                     setTimeout(() => {
-                      trigger.style.display = "none";
+                      if(trigger)
+                        trigger.style.display = "none";
                     }, 3000); // Thời gian chờ 3 giây trước khi ẩn modal
                   }
                 });
 
               googletag
                 .pubads()
-                .addEventListener("rewardedSlotReady", (evt) => {
+                .addEventListener("rewardedSlotReady", (evt: any) => {
                   evt.makeRewardedVisible();
                 });
 
               googletag
                 .pubads()
-                .addEventListener("rewardedSlotClosed", (evt) => {
+                .addEventListener("rewardedSlotClosed", (evt: any) => {
                   // Ẩn modal sau khi người dùng tắt rewarded ad
-                  trigger.style.display = "none";
+                  if(trigger)
+                    trigger.style.display = "none";
                   // Lưu thông tin đã hiển thị quảng cáo
                   localStorage.setItem(
                     "hasShownRewardedAd",
