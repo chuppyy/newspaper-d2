@@ -20,7 +20,7 @@ export default function RewardedAd() {
 
           if (
             !hasShownRewardedAd ||
-            currentTime - parseInt(hasShownRewardedAd, 10) > 10*60*1000
+            currentTime - parseInt(hasShownRewardedAd, 10) > 10 * 60 * 1000
           ) {
             // Nếu chưa hiển thị hoặc đã quá 10 phút, tiếp tục xử lý
             const rewardedSlot = googletag
@@ -35,7 +35,7 @@ export default function RewardedAd() {
 
             const showRewardedAd = () => {
               const trigger = document.getElementById("rewardModal");
-              if(trigger)
+              if (trigger)
                 trigger.style.display = "block";
 
               googletag.pubads().addEventListener("impressionViewable", () => {
@@ -52,7 +52,7 @@ export default function RewardedAd() {
                     // Ẩn modal nếu quảng cáo không thành công
                     setTimeout(() => {
                       const trigger = document.getElementById("rewardModal");
-                      if(trigger)
+                      if (trigger)
                         trigger.style.display = "none";
                     }, 3000); // Thời gian chờ 3 giây trước khi ẩn modal
                   }
@@ -70,8 +70,8 @@ export default function RewardedAd() {
                   // Ẩn modal sau khi người dùng tắt rewarded ad
                   console.log("onclosed")
                   const trigger = document.getElementById("rewardModal");
-                  if(trigger)
-                        trigger.style.display = "none";
+                  if (trigger)
+                    trigger.style.display = "none";
                   // Lưu thông tin đã hiển thị quảng cáo
                   localStorage.setItem(
                     "hasShownRewardedAd",
@@ -85,10 +85,10 @@ export default function RewardedAd() {
             // Hiển thị quảng cáo khi trang web được tải
             showRewardedAd();
           }
-          else  {
+          else {
             const trigger = document.getElementById("rewardModal");
-              if(trigger)
-                trigger.style.display = "none";
+            if (trigger)
+              trigger.style.display = "none";
           }
         });
       };
@@ -96,6 +96,11 @@ export default function RewardedAd() {
       // Thêm thẻ script vào thẻ <head>
       document.head.appendChild(script);
     };
+
+    //
+    const trigger = document.getElementById("rewardModal");
+    if (trigger)
+      trigger.style.display = "none";
 
     // Gọi hàm load script khi component được mount
     loadGoogleTagScript();
@@ -117,7 +122,6 @@ export default function RewardedAd() {
           top: 0;
           width: 100%;
           height: 100%;
-          background-color: rgba(0, 0, 0, 0.4);
         }
 
         .modal-content {
