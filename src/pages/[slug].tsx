@@ -7,11 +7,7 @@ const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
-declare global {
-  interface Window {
-    googletag: any;
-  }
-}
+
 export default function Page(data: any) {
   const article = data.data;
   const {
@@ -26,59 +22,7 @@ export default function Page(data: any) {
     googleTagId,
   } = data.parameters;
 
-useEffect(() => {
-        const googletag = window.googletag || { cmd: [] };
 
-        googletag.cmd.push(() => {
-            const hasShownRewardedAd = localStorage.getItem('hasShownRewardedAd');
-            const currentTime = Date.now();
-
-            if (!hasShownRewardedAd || (currentTime - parseInt(hasShownRewardedAd, 10)) > 10 * 60 * 1000) {
-                const rewardedSlot = googletag.defineOutOfPageSlot(
-                    '/23201474937/newspaper.livextop.com/newspaper.livextop.com_rewarded',
-                    googletag.enums.OutOfPageFormat.REWARDED
-                ).addService(googletag.pubads());
-
-                rewardedSlot.setForceSafeFrame(true);
-                googletag.pubads().enableAsyncRendering();
-                googletag.enableServices();
-
-                const showRewardedAd = () => {
-                    const trigger = document.getElementById('rewardModal');
-                  if(trigger){
-                    trigger.style.display = 'block';
-
-                    googletag.pubads().addEventListener('impressionViewable', () => {
-                        console.log('Impression viewable!');
-                    });
-
-                    googletag.pubads().addEventListener('slotRenderEnded', (event: any) => {
-                        if (event.isEmpty) {
-                            console.log('Ad is empty or failed to load');
-                            setTimeout(() => {
-                                trigger.style.display = 'none';
-                            }, 3000);  // Ẩn modal sau 3 giây nếu quảng cáo không thành công
-                        }
-                    });
-
-                    googletag.pubads().addEventListener('rewardedSlotReady', (evt: any) => {
-                        evt.makeRewardedVisible();
-                    });
-
-                    googletag.pubads().addEventListener('rewardedSlotClosed', (evt: any) => {
-                        trigger.style.display = 'none';
-                        localStorage.setItem('hasShownRewardedAd', currentTime.toString());
-                    });
-
-                    googletag.display(rewardedSlot);
-                  }
-                    
-                };
-
-                showRewardedAd();
-            }
-        });
-    }, []); // Chạy useEffect một lần sau khi trang được tải
   
   // // QC video
   // useEffect(() => {
@@ -244,19 +188,6 @@ useEffect(() => {
           }}
           async
         ></script>
-  
-<Script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" />
-
-
-<div id="rewardModal" className="modal">
-    
-    <div className="modal-content">
-       
-    </div>
-</div>
-
-
-        
       </main>
     </>
   );
