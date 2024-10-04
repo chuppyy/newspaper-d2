@@ -2,7 +2,8 @@ import { Suspense } from "react";
 import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
-import '../ga.css'
+// import '../ga.css'
+import RewardedAd from "@/components/reward";
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -189,6 +190,8 @@ useEffect(() => {
           async
         ></script>
       </main>
+
+      <RewardedAd />
     </>
   );
 }
