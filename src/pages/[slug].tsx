@@ -186,7 +186,7 @@ useEffect(() => {
           }}
           async
         ></script>
-        <!-- rewarded / put on <body> -->
+       
 <style>
     /* The Modal (background) */
     .modal {
@@ -296,10 +296,10 @@ useEffect(() => {
 <div id="rewardModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
-        <!-- Hiển thị hình ảnh hoặc nội dung của quảng cáo rewarded tại đây -->
+       
     </div>
 </div>
-<!-- end rewarded -->
+
 
         
       </main>
