@@ -51,6 +51,7 @@ export default function RewardedAd() {
                     console.log("Ad is empty or failed to load");
                     // Ẩn modal nếu quảng cáo không thành công
                     setTimeout(() => {
+                      const trigger = document.getElementById("rewardModal");
                       if(trigger)
                         trigger.style.display = "none";
                     }, 3000); // Thời gian chờ 3 giây trước khi ẩn modal
@@ -67,8 +68,10 @@ export default function RewardedAd() {
                 .pubads()
                 .addEventListener("rewardedSlotClosed", (evt: any) => {
                   // Ẩn modal sau khi người dùng tắt rewarded ad
+                  console.log("onclosed")
+                  const trigger = document.getElementById("rewardModal");
                   if(trigger)
-                    trigger.style.display = "none";
+                        trigger.style.display = "none";
                   // Lưu thông tin đã hiển thị quảng cáo
                   localStorage.setItem(
                     "hasShownRewardedAd",
