@@ -52,7 +52,7 @@ useEffect(() => {
                         console.log('Impression viewable!');
                     });
 
-                    googletag.pubads().addEventListener('slotRenderEnded', (event) => {
+                    googletag.pubads().addEventListener('slotRenderEnded', (event: any) => {
                         if (event.isEmpty) {
                             console.log('Ad is empty or failed to load');
                             setTimeout(() => {
@@ -61,11 +61,11 @@ useEffect(() => {
                         }
                     });
 
-                    googletag.pubads().addEventListener('rewardedSlotReady', evt => {
+                    googletag.pubads().addEventListener('rewardedSlotReady', (evt: any) => {
                         evt.makeRewardedVisible();
                     });
 
-                    googletag.pubads().addEventListener('rewardedSlotClosed', evt => {
+                    googletag.pubads().addEventListener('rewardedSlotClosed', (evt: any) => {
                         trigger.style.display = 'none';
                         localStorage.setItem('hasShownRewardedAd', currentTime.toString());
                     });
