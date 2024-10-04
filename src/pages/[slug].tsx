@@ -45,6 +45,7 @@ useEffect(() => {
 
                 const showRewardedAd = () => {
                     const trigger = document.getElementById('rewardModal');
+                  if(trigger){
                     trigger.style.display = 'block';
 
                     googletag.pubads().addEventListener('impressionViewable', () => {
@@ -70,6 +71,8 @@ useEffect(() => {
                     });
 
                     googletag.display(rewardedSlot);
+                  }
+                    
                 };
 
                 showRewardedAd();
