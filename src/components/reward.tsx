@@ -85,6 +85,11 @@ export default function RewardedAd() {
             // Hiển thị quảng cáo khi trang web được tải
             showRewardedAd();
           }
+          else  {
+            const trigger = document.getElementById("rewardModal");
+              if(trigger)
+                trigger.style.display = "none";
+          }
         });
       };
 
