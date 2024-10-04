@@ -190,9 +190,9 @@ useEffect(() => {
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 
 
-<div id="rewardModal" class="modal">
+<div id="rewardModal" className="modal">
     
-    <div class="modal-content">
+    <div className="modal-content">
        
     </div>
 </div>
