@@ -20,7 +20,7 @@ export default function RewardedAd() {
 
           if (
             !hasShownRewardedAd ||
-            currentTime - parseInt(hasShownRewardedAd, 10) > 10  60  1000
+            currentTime - parseInt(hasShownRewardedAd, 10) > 10*60*1000
           ) {
             // Nếu chưa hiển thị hoặc đã quá 10 phút, tiếp tục xử lý
             const rewardedSlot = googletag
