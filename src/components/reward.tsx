@@ -127,7 +127,6 @@ export default function RewardedAd() {
         .modal-content {
           margin: auto;
           padding: 25px;
-          background-color: #fefefe;
           text-align: center;
           position: fixed;
           top: 50%;
