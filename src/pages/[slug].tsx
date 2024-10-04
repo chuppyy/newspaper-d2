@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
-
+import '../ga.css'
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -186,57 +186,7 @@ useEffect(() => {
           }}
           async
         ></script>
-       
-<style>
-    /* The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 300px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-
-    /* Modal Content */
-    .modal-content {
-        margin: auto;
-        padding: 25px;
-        background-color: #fefefe;
-        text-align: center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    @media all and (orientation: landscape) {
-        /* Modal Content */
-        .modal-content {
-            margin: auto;
-            padding: 25px;
-            background-color: #fefefe;
-            text-align: center;
-            position: fixed;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-    }
-
-    .btn {
-        padding: .5rem;
-        background: #2990EA;
-        border: none;
-        border-radius: 4px;
-        margin: 4px;
-    }
-</style>
+  
 <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
     googletag = window.googletag || {cmd: []};
@@ -294,7 +244,7 @@ useEffect(() => {
 </script>
 
 <div id="rewardModal" class="modal">
-    <!-- Modal content -->
+    
     <div class="modal-content">
        
     </div>
