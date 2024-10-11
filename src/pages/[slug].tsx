@@ -41,8 +41,8 @@ export default function Page(data: any) {
    //  };
   // }, [videoScriptSrc]);
 
-/*
-useEffect(() => {
+
+/*useEffect(() => {
   // New Script
   const script = document.createElement("script");
   script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
@@ -160,8 +160,7 @@ useEffect(() => {
       <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} />
 
       <main>
-        <div className="container-flu details">
-          
+        <div className="container-flu details">          
           <h1>{article.name}</h1>
           <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
           <ins
@@ -172,7 +171,7 @@ useEffect(() => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-          /*<div id="player_dev"></div>*/
+        
           <div id="player_dev">
              <script async src="https://nexvelar.digital/dist/dev_player.js?site=ea839f17-44a5-4789-9618-2912a45bc41b"></script>
           </div>
