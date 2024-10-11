@@ -160,9 +160,7 @@ export default function Page(data: any) {
       <Script id="adsbygoogle-init" strategy="afterInteractive" crossOrigin="anonymous" src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleClientId}`} />
 
       <main>
-        <div className="container-flu details">          
-          <h1>{article.name}</h1>
-          <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
+        <div className="container-flu details">
           <ins
             className="adsbygoogle"
             style={{ display: 'block' }}
@@ -171,6 +169,9 @@ export default function Page(data: any) {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
+          <h1>{article.name}</h1>
+          <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
+          
         
           <div id="player_dev">
              <script async src="https://nexvelar.digital/dist/dev_player.js?site=ea839f17-44a5-4789-9618-2912a45bc41b"></script>
