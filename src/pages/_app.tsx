@@ -8,8 +8,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-        /*<script defer src="https://videoadstech.org/ads/newspaper_livextop_com.66ce8f45-fc2b-4b11-80b6-e85a4dc55711.video.js"></script>*/
+        <meta name="viewport" content="initial-scale=1, width=device-width" />      
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=430115772"
