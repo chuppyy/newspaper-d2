@@ -25,24 +25,24 @@ export default function Page(data: any) {
 
 
   
-   // QC video
-   //useEffect(() => {
-   //  const scriptElement = document.createElement("script");
-    // scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
-   //  scriptElement.async = true;
-   //  const scriptContainer = document.getElementById("player_dev");
-   //  if (scriptContainer) {
-   //    scriptContainer.appendChild(scriptElement);
-   //  }
-   //  return () => {
-   //    if (scriptContainer) {
-   //      scriptContainer.removeChild(scriptElement);
-   //    }
-   //  };
+  // // QC video
+  // useEffect(() => {
+  //   const scriptElement = document.createElement("script");
+  //   scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
+  //   scriptElement.async = true;
+  //   const scriptContainer = document.getElementById("player_dev");
+  //   if (scriptContainer) {
+  //     scriptContainer.appendChild(scriptElement);
+  //   }
+  //   return () => {
+  //     if (scriptContainer) {
+  //       scriptContainer.removeChild(scriptElement);
+  //     }
+  //   };
   // }, [videoScriptSrc]);
 
-
-/*useEffect(() => {
+/*
+useEffect(() => {
   // New Script
   const script = document.createElement("script");
   script.src = `https://cdn.unibotscdn.com/player/mvp/player.js?v=${Math.floor(
@@ -161,6 +161,9 @@ export default function Page(data: any) {
 
       <main>
         <div className="container-flu details">
+          
+          <h1>{article.name}</h1>
+          <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
           <ins
             className="adsbygoogle"
             style={{ display: 'block' }}
@@ -169,13 +172,7 @@ export default function Page(data: any) {
             data-ad-format="auto"
             data-full-width-responsive="true"
           />
-          <h1>{article.name}</h1>
-          <p className="mb-4 text-lg">Posted: {formatDate(article.dateTimeStart)}</p>
-          
-        
-          <div id="player_dev">
-             <script async src="https://nexvelar.digital/dist/dev_player.js?site=ea839f17-44a5-4789-9618-2912a45bc41b"></script>
-          </div>
+          <div id="player_dev"></div>
           <div id="div-ub-boonovel.com_1703240626524"></div>
           <Suspense fallback={<p>Loading ...</p>}>
             <article className="content" dangerouslySetInnerHTML={{ __html: article.content }} />
@@ -213,21 +210,21 @@ export async function getStaticProps({ params }: { params: any }) {
 
     // Pass parameters dynamically
     const parameters = {
-      videoScriptSrc: "https://nexvelar.digital/dist/dev_player.js?site=a1341372-9eea-49ed-bda9-97d7c58c1305",
+      videoScriptSrc: "https://nexvelar.digital/ads/nthotnews_boonovel_com.eb373146-0084-4675-83c9-23556caad088.video.js",
       //Code auto 
-      googleClientId: "ca-pub-3052636440995168",
+      googleClientId: "ca-pub-2388584177550957",
       //GA tiêu đề
-      googleClientSlotId:"1546718362",
+      googleClientSlotId:"6488553234",
       //GA sau video
-      googleAdSlot: "6705645893",
+      googleAdSlot: "5099751269",
 //Cái sau
-      mgWidgetId1: "1596350",
+      mgWidgetId1: "1677050",
       //Cái trước
-      mgWidgetId2: "1596351",
+      mgWidgetId2: "1677050",
 
-      mgWidgetFeedId: "1596349",
+      mgWidgetFeedId: "1677049",
       //scrip adkeeper
-      adsKeeperSrc: "https://jsc.adskeeper.com/site/942715.js",
+      adsKeeperSrc: "https://jsc.adskeeper.com/site/986655.js",
       //Analytic
       googleTagId: "G-YSM71MQHG7",
     };
