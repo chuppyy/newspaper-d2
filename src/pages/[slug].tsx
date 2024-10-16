@@ -3,7 +3,7 @@ import Script from "next/script";
 import Head from "next/head";
 import { useEffect } from "react";
 // import '../ga.css'
-//import RewardedAd from "@/components/reward";
+import RewardedAd from "@/components/reward";
 const formatDate = (str: string) => {
   const date = new Date(str);
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
@@ -26,20 +26,20 @@ export default function Page(data: any) {
 
   
    // QC video
-   useEffect(() => {
-     const scriptElement = document.createElement("script");
-     scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
-     scriptElement.async = true;
-     const scriptContainer = document.getElementById("player_dev");
-     if (scriptContainer) {
-       scriptContainer.appendChild(scriptElement);
-     }
-     return () => {
-       if (scriptContainer) {
-         scriptContainer.removeChild(scriptElement);
-       }
-     };
-   }, [videoScriptSrc]);
+   //useEffect(() => {
+   //  const scriptElement = document.createElement("script");
+    // scriptElement.src = `${videoScriptSrc}?v=${Math.floor(Math.random() * 1000)}`;
+   //  scriptElement.async = true;
+   //  const scriptContainer = document.getElementById("player_dev");
+   //  if (scriptContainer) {
+   //    scriptContainer.appendChild(scriptElement);
+   //  }
+   //  return () => {
+   //    if (scriptContainer) {
+   //      scriptContainer.removeChild(scriptElement);
+   //    }
+   //  };
+  // }, [videoScriptSrc]);
 
 
 /*useEffect(() => {
@@ -174,7 +174,7 @@ export default function Page(data: any) {
           
         
           <div id="player_dev">
-             
+             <script async src="https://nexvelar.digital/dist/dev_player.js?site=ea839f17-44a5-4789-9618-2912a45bc41b"></script>
           </div>
           <div id="div-ub-boonovel.com_1703240626524"></div>
           <Suspense fallback={<p>Loading ...</p>}>
@@ -194,7 +194,7 @@ export default function Page(data: any) {
         ></script>
       </main>
 
-      
+      <RewardedAd />
     </>
   );
 }
